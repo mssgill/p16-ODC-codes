@@ -12,17 +12,31 @@ c = 3 * 10**8     # m/s
 
 msun = 2*10**30 #kg
 
+
+# For the Hulse Taylor
 m1 = 1.4 * msun
 m2 = 1.4 * msun
 
 rsun = 7*10**8 # m
 
 r = 1.8 * rsun
-tconv = 3*10**7
+tconv = 3.15*10**7  # Number of sec per yr
+
+
+t = (5./ 256.)* (c**5 /G**3) * r**4 / (( m1* m2 ) * ( m1 + m2 )) / tconv
+
+print(t)
+
+# For the Earth-Sun system
+m1 = 1 * msun
+m2 =   msun / (330000.)
+
+r = 150*10**9 # m
 
 t = (5./ 256.)* (c**5 /G**3) * r**4 / (( m1* m2 ) * ( m1 + m2 )) / tconv
 
 print(t)
 
 print("Time in yrs to coalescence ", "{:.1e}".format(t))
+
 
